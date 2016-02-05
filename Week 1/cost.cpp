@@ -7,9 +7,9 @@ int main()
 
 	double pounds, price, pricePerPound;
 	
-	cout<<"Enter pounds"<<endl;
+	cout<<"Enter Weight in Pounds"<<endl;
 	cin>>pounds;
-	cout<<"Enter price"<<endl;
+	cout<<"Enter Total Price"<<endl;
 	cin>>price;
 
 	pricePerPound = price/pounds;
