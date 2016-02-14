@@ -50,7 +50,7 @@ int main()
 	//isspace checks whether the character is a "white space character"
 	//
 	//psuedocode:
-	//Assign string variable - "string goes here"
+	//Assign string variable 
 	//create a new empty char string array
 	//for loop through the string's caharacters, checking to see if there is a space in the string and if there is, insert the characters before the space into a position in the array?
 
