@@ -98,6 +98,21 @@ int main() {
 	//make an array of strings that will get recognized by the parser, like "LOOK", "GO", "GET", etc.
 	//loop through the array to see if the command is recognized, then use a switch to display a custom response.
 
+	string greetings[] = {"HI", "HEY", "HELLO", "GREETINGS" };
+
+	for (int i = 0; i < greetings[i].size(); i++){
+		if (command != greetings[i]){
+			cout << "that is not a greeting" << endl;
+		} 
+
+		if (command == greetings[i]){
+			cout << "why hello there" << endl;
+		}
+	}
+
+	//it will only parse through if thereis only one word input and matches it based on its' position to the array.
+
+
 
 	//if you're comfortable with the above, try...
 	//3: (ADVANCED)
