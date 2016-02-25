@@ -46,11 +46,16 @@ void keyPressed(){
     if (keyCode == UP){
       text(myArray[x][y], posX, posY-=5);
       
-      //for (int i = 0; i < 10; i+=5){
-      //  for (int j = 0; j < 10; j+=5){
-      //    myArray[i][j] = 'O';
-      //  }
-      //}
+      for (int i = 0; i < 10; i+=5){
+       for (int j = 0; j < 10; j+=5){
+         myArray[i][j] = 'O';
+       }
+      } 
+      // I tried to create the walker using the array 
+      //but it is appearing out really weirdly like, it 
+      //would come out in the center, and then randomly at 
+      //the origin point. I tried to translate it but it is 
+      //not responding to it.
       
     }else if(keyCode == DOWN){
        text(myArray[x][y], posX, posY+=5);
