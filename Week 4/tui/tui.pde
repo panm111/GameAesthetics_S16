@@ -1,8 +1,9 @@
-Walker walker;
+//Walker walker;
 
 int cols = 500;
 int rows = 500;
 char[][] myArray = new char[cols][rows];
+//char[][] map = new char[50][50];
 int width = 500;
 int height = 500;
 int posX = width/2;
@@ -14,57 +15,62 @@ float randNum = random(-5, 5);
 void setup() {
   size(500, 500);
   for (int i = 0; i < cols; i+= 5) {
-    for (int j = 0; j < rows; j+= 5) {
-      myArray[i][j] = ' ';
-    }
+  for (int j = 0; j < rows; j+= 5) {
+    myArray[i][j] = ' ';
+    //text(myArray[i][j], i*2, j*2);
+  }
   }
   
-  myArray[x][y] = 'X';
+  //for(int i = 0; i < 50; i+=5){
+  //   for(int j = 0; j <50; j+= 5){
+  //    map[i][j] = 'O';
+  //    //text(map[i][j], i*2, j*2);
+  //   }
+  //}
   
-  walker = new Walker();
+  //myArray[x][y] = 'X';
+  
+  //walker = new Walker();
   
 }//end of setup
 
 void draw () {
-  background(0);
+  //background(0);
   //loop through array again
-   for (int i = 0; i < cols; i++) {
-    for (int j = 0; j < rows; j++) {
-      text(myArray[i][j], i*2, j*2);
-    }
+  //text(myArray[x][y], posX, posY);
+  
+  for (int i = 0; i < cols; i+=5) {
+   for (int j = 0; j < rows; j+=5) {
+     text(myArray[i][j], i*2, j*2);
+     if(j==x && i ==y){
+        text('X', j, i); 
+     }
+     
+     if (abs(j-x)<2 && abs(i-y)<2){
+        text('O', j, i); 
+     }
+     
+   }
   }
-  text(myArray[x][y], posX, posY);
   
   
-  walker.update();
-  walker.draw();
+  
+  //walker.update();
+  //walker.draw();
   
 }//end of draw
 
 void keyPressed(){
   if(key == CODED){
     if (keyCode == UP){
-      text(myArray[x][y], posX, posY-=5);
-      
-      for (int i = 0; i < 10; i+=5){
-       for (int j = 0; j < 10; j+=5){
-         myArray[i][j] = 'O';
-       }
-      } 
-      // I tried to create the walker using the array 
-      //but it is appearing out really weirdly like, it 
-      //would come out in the center, and then randomly at 
-      //the origin point. I tried to translate it but it is 
-      //not responding to it.
-      
+      text(myArray[x][y], posX, posY-=10);
     }else if(keyCode == DOWN){
-       text(myArray[x][y], posX, posY+=5);
+       text(myArray[x][y], posX, posY+=10);
     }else if(keyCode == LEFT){
-      text(myArray[x][y], posX-=5, posY);
+      text(myArray[x][y], posX-=10, posY);
     }else if(keyCode == RIGHT){
-      text(myArray[x][y], posX+=5, posY);
+      text(myArray[x][y], posX+=10, posY);
     }
-    
   }
   
 }//end of keypressed
