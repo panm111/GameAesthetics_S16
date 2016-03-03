@@ -10,6 +10,7 @@ void setup(){
   for(int i = 0; i < cellsize; i+=10){
    for(int j = 0; j < cellsize; j+=10){
       grid[j][i] = random(0,1);
+      print(grid[j][i]);
    }
   }
   
@@ -38,20 +39,43 @@ void draw(){
       }
     }
   }
-  print(grid[x][y]);
+  //print(grid[x][y]);
 }//end of draw
 
 
 void keyPressed(){
   if(key == CODED){
     if (keyCode == UP){
-      text(grid[x][y], x, y-=10);
+      if(grid[x][y-10] <= 0.501){
+         ellipse(x,y, 10,10);//text(grid[x][y], x, y); 
+      }else{
+        //text(grid[x][y], x, y-=10);
+        ellipse(x,y-=10, 10,10);
+      }
     }else if(keyCode == DOWN){
-       text(grid[x][y], x, y+=10);
+      if(grid[x][y+10] <= 0.501){
+         //text(grid[x][y], x, y); 
+         ellipse(x,y, 10,10);
+      }else{
+       //text(grid[x][y], x, y+=10);
+       ellipse(x,y+=10, 10,10);
+      }
     }else if(keyCode == LEFT){
-      text(grid[x][y], x-=10, y);
+      if(grid[x-10][y] <= 0.501){
+        //text(grid[x][y], x, y); 
+        ellipse(x,y, 10,10);
+      }else{
+      //text(grid[x][y], x-=10, y);
+      ellipse(x-=10,y, 10,10);
+      }
     }else if(keyCode == RIGHT){
-      text(grid[x][y], x+=10, y);
+      if(grid[x+10][y] <= 0.501){
+         //text(grid[x][y], x, y); 
+         ellipse(x,y, 10,10);
+      }else{
+      //text(grid[x][y], x+=10, y);
+        ellipse(x+=10,y, 10,10);
+      }
     }
   }
 } //end of key pressed
