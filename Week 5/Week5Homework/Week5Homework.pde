@@ -44,6 +44,8 @@ void draw(){
 
 
 void keyPressed(){
+  //the player will check the value of the grid above to see whether it is black or white.
+  // if it is black then it will not move.
   if(key == CODED){
     if (keyCode == UP){
       if(grid[x][y-10] <= 0.501){
